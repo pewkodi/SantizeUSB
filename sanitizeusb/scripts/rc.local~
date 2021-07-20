@@ -1,0 +1,22 @@
+#this file called from rc.sysinit
+#you can edit this file
+#When firewall is installed, will append lines to this file...
+
+echo enabled > /sys/bus/usb/devices/usb1/power/wakeup
+echo enabled > /sys/bus/usb/devices/usb2/power/wakeup
+echo enabled > /sys/bus/usb/devices/usb3/power/wakeup
+echo enabled > /sys/bus/usb/devices/usb4/power/wakeup
+echo enabled > /sys/bus/usb/devices/usb5/power/wakeup
+echo enabled > /sys/bus/usb/devices/usb6/power/wakeup
+echo enabled > /sys/bus/usb/devices/usb7/power/wakeup
+echo enabled > /sys/bus/usb/devices/usb8/power/wakeup
+echo enabled > /sys/bus/usb/devices/usb9/power/wakeup
+echo enabled > /sys/bus/usb/devices/usb10/power/wakeup
+
+
+mkdir /root/usb
+. /etc/rc.d/PUPSTATE
+mount /dev/$PDEV1 /root/usb
+
+brightness=`cat /root/.config/brightness.conf`
+echo $brightness > /sys/class/backlight/acpi_video0/brightness

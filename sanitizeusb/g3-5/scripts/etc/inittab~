@@ -1,0 +1,8 @@
+::sysinit:/etc/rc.d/rc.sysinit
+tty1::respawn:mingetty --autologin root tty1
+tty2::respawn:mingetty   tty2
+tty3::respawn:mingetty   tty3
+tty4::respawn:mingetty   tty4
+#tty2::respawn:getty 38400 tty2
+#tty3::respawn:getty 38400 tty3
+#::ctrlaltdel:/sbin/reboot
